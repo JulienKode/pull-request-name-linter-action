@@ -2058,48 +2058,7 @@ module.exports = YAMLException;
 
 
 /***/ }),
-/* 83 */
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-"use strict";
-
-const path = __webpack_require__(622);
-const Module = __webpack_require__(282);
-
-const resolveFrom = (fromDir, moduleId, silent) => {
-	if (typeof fromDir !== 'string') {
-		throw new TypeError(`Expected \`fromDir\` to be of type \`string\`, got \`${typeof fromDir}\``);
-	}
-
-	if (typeof moduleId !== 'string') {
-		throw new TypeError(`Expected \`moduleId\` to be of type \`string\`, got \`${typeof moduleId}\``);
-	}
-
-	fromDir = path.resolve(fromDir);
-	const fromFile = path.join(fromDir, 'noop.js');
-
-	const resolveFileName = () => Module._resolveFilename(moduleId, {
-		id: fromFile,
-		filename: fromFile,
-		paths: Module._nodeModulePaths(fromDir)
-	});
-
-	if (silent) {
-		try {
-			return resolveFileName();
-		} catch (err) {
-			return null;
-		}
-	}
-
-	return resolveFileName();
-};
-
-module.exports = (fromDir, moduleId) => resolveFrom(fromDir, moduleId);
-module.exports.silent = (fromDir, moduleId) => resolveFrom(fromDir, moduleId, true);
-
-
-/***/ }),
+/* 83 */,
 /* 84 */,
 /* 85 */,
 /* 86 */
@@ -11912,7 +11871,7 @@ module.exports = require("buffer");
 "use strict";
 
 const path = __webpack_require__(622);
-const resolveFrom = __webpack_require__(83);
+const resolveFrom = __webpack_require__(484);
 const callerPath = __webpack_require__(754);
 
 module.exports = moduleId => {
@@ -12123,7 +12082,7 @@ var _cosmiconfig2 = _interopRequireDefault(_cosmiconfig);
 
 var _lodash = __webpack_require__(557);
 
-var _resolveFrom = __webpack_require__(484);
+var _resolveFrom = __webpack_require__(981);
 
 var _resolveFrom2 = _interopRequireDefault(_resolveFrom);
 
@@ -16868,50 +16827,38 @@ module.exports = function (key) {
 
 const path = __webpack_require__(622);
 const Module = __webpack_require__(282);
-const fs = __webpack_require__(747);
 
-const resolveFrom = (fromDirectory, moduleId, silent) => {
-	if (typeof fromDirectory !== 'string') {
-		throw new TypeError(`Expected \`fromDir\` to be of type \`string\`, got \`${typeof fromDirectory}\``);
+const resolveFrom = (fromDir, moduleId, silent) => {
+	if (typeof fromDir !== 'string') {
+		throw new TypeError(`Expected \`fromDir\` to be of type \`string\`, got \`${typeof fromDir}\``);
 	}
 
 	if (typeof moduleId !== 'string') {
 		throw new TypeError(`Expected \`moduleId\` to be of type \`string\`, got \`${typeof moduleId}\``);
 	}
 
-	try {
-		fromDirectory = fs.realpathSync(fromDirectory);
-	} catch (error) {
-		if (error.code === 'ENOENT') {
-			fromDirectory = path.resolve(fromDirectory);
-		} else if (silent) {
-			return;
-		} else {
-			throw error;
-		}
-	}
-
-	const fromFile = path.join(fromDirectory, 'noop.js');
+	fromDir = path.resolve(fromDir);
+	const fromFile = path.join(fromDir, 'noop.js');
 
 	const resolveFileName = () => Module._resolveFilename(moduleId, {
 		id: fromFile,
 		filename: fromFile,
-		paths: Module._nodeModulePaths(fromDirectory)
+		paths: Module._nodeModulePaths(fromDir)
 	});
 
 	if (silent) {
 		try {
 			return resolveFileName();
-		} catch (error) {
-			return;
+		} catch (err) {
+			return null;
 		}
 	}
 
 	return resolveFileName();
 };
 
-module.exports = (fromDirectory, moduleId) => resolveFrom(fromDirectory, moduleId);
-module.exports.silent = (fromDirectory, moduleId) => resolveFrom(fromDirectory, moduleId, true);
+module.exports = (fromDir, moduleId) => resolveFrom(fromDir, moduleId);
+module.exports.silent = (fromDir, moduleId) => resolveFrom(fromDir, moduleId, true);
 
 
 /***/ }),
@@ -16957,7 +16904,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var path_1 = __importDefault(__webpack_require__(622));
 __webpack_require__(206);
-var resolve_from_1 = __importDefault(__webpack_require__(484));
+var resolve_from_1 = __importDefault(__webpack_require__(967));
 var lodash_1 = __webpack_require__(557);
 var importFresh = __webpack_require__(275);
 function resolveExtends(config, context) {
@@ -47778,7 +47725,60 @@ module.exports = options => {
 
 
 /***/ }),
-/* 967 */,
+/* 967 */
+/***/ (function(module, __unusedexports, __webpack_require__) {
+
+"use strict";
+
+const path = __webpack_require__(622);
+const Module = __webpack_require__(282);
+const fs = __webpack_require__(747);
+
+const resolveFrom = (fromDirectory, moduleId, silent) => {
+	if (typeof fromDirectory !== 'string') {
+		throw new TypeError(`Expected \`fromDir\` to be of type \`string\`, got \`${typeof fromDirectory}\``);
+	}
+
+	if (typeof moduleId !== 'string') {
+		throw new TypeError(`Expected \`moduleId\` to be of type \`string\`, got \`${typeof moduleId}\``);
+	}
+
+	try {
+		fromDirectory = fs.realpathSync(fromDirectory);
+	} catch (error) {
+		if (error.code === 'ENOENT') {
+			fromDirectory = path.resolve(fromDirectory);
+		} else if (silent) {
+			return;
+		} else {
+			throw error;
+		}
+	}
+
+	const fromFile = path.join(fromDirectory, 'noop.js');
+
+	const resolveFileName = () => Module._resolveFilename(moduleId, {
+		id: fromFile,
+		filename: fromFile,
+		paths: Module._nodeModulePaths(fromDirectory)
+	});
+
+	if (silent) {
+		try {
+			return resolveFileName();
+		} catch (error) {
+			return;
+		}
+	}
+
+	return resolveFileName();
+};
+
+module.exports = (fromDirectory, moduleId) => resolveFrom(fromDirectory, moduleId);
+module.exports.silent = (fromDirectory, moduleId) => resolveFrom(fromDirectory, moduleId, true);
+
+
+/***/ }),
 /* 968 */,
 /* 969 */
 /***/ (function(module, __unusedexports, __webpack_require__) {
@@ -48050,7 +48050,60 @@ module.exports = { "default": __webpack_require__(681), __esModule: true };
 module.exports = { "default": __webpack_require__(279), __esModule: true };
 
 /***/ }),
-/* 981 */,
+/* 981 */
+/***/ (function(module, __unusedexports, __webpack_require__) {
+
+"use strict";
+
+const path = __webpack_require__(622);
+const Module = __webpack_require__(282);
+const fs = __webpack_require__(747);
+
+const resolveFrom = (fromDirectory, moduleId, silent) => {
+	if (typeof fromDirectory !== 'string') {
+		throw new TypeError(`Expected \`fromDir\` to be of type \`string\`, got \`${typeof fromDirectory}\``);
+	}
+
+	if (typeof moduleId !== 'string') {
+		throw new TypeError(`Expected \`moduleId\` to be of type \`string\`, got \`${typeof moduleId}\``);
+	}
+
+	try {
+		fromDirectory = fs.realpathSync(fromDirectory);
+	} catch (error) {
+		if (error.code === 'ENOENT') {
+			fromDirectory = path.resolve(fromDirectory);
+		} else if (silent) {
+			return;
+		} else {
+			throw error;
+		}
+	}
+
+	const fromFile = path.join(fromDirectory, 'noop.js');
+
+	const resolveFileName = () => Module._resolveFilename(moduleId, {
+		id: fromFile,
+		filename: fromFile,
+		paths: Module._nodeModulePaths(fromDirectory)
+	});
+
+	if (silent) {
+		try {
+			return resolveFileName();
+		} catch (error) {
+			return;
+		}
+	}
+
+	return resolveFileName();
+};
+
+module.exports = (fromDirectory, moduleId) => resolveFrom(fromDirectory, moduleId);
+module.exports.silent = (fromDirectory, moduleId) => resolveFrom(fromDirectory, moduleId, true);
+
+
+/***/ }),
 /* 982 */,
 /* 983 */,
 /* 984 */
