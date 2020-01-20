@@ -1,0 +1,14 @@
+name: 'Pull request linter action'
+description: "Lint your pull request name based on commitlint configuration"
+author: 'Julien Karst'
+inputs:
+  configuration-path:
+    description: 'The path for the commitlint configurations'
+    required: false
+    default: './commitlint.config.js'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'users'
+  color: 'blue'
