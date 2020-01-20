@@ -29,14 +29,3 @@ jobs:
     - uses: actions/checkout@v1
     - uses: JulienKode/pull-request-name-linter-action@v0.1.0
 ```
-
-## Config with `extends`
-
-This Github action came with the most used shared configurations got commitlint. We already provide:
-
-- [@commitlint/config-angular](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-angular)
-- [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
-- [@commitlint/config-lerna-scopes](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-lerna-scopes)
-- [@commitlint/config-patternplate](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-patternplate)
-- [conventional-changelog-lint-config-canonical](https://github.com/gajus/conventional-changelog-lint-config-canonical)
-- [commitlint-config-jira](https://github.com/Gherciu/commitlint-jira)
