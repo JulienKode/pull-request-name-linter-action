@@ -30,7 +30,7 @@
     "@commitlint/load": "8.3.5"
   },
   "devDependencies": {
-    "@types/jest": "24.9.1",
+    "@types/jest": "25.1.0",
     "@types/node": "12.12.25",
     "@typescript-eslint/parser": "2.18.0",
     "@zeit/ncc": "0.21.0",
