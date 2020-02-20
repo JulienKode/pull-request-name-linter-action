@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "1.2.2",
-    "@actions/github": "1.1.0",
+    "@actions/github": "2.1.1",
     "@commitlint/lint": "8.3.5",
     "@commitlint/load": "8.3.5"
   },
