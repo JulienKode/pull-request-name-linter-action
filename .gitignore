@@ -98,6 +98,4 @@ Thumbs.db
 __tests__/runner/*
 lib/**/*
 
-yarn.lock
-
 .idea/
