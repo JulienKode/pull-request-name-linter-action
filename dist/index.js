@@ -318,9 +318,9 @@ module.exports = require("tls");
 /***/ }),
 /* 17 */,
 /* 18 */
-/***/ (function() {
+/***/ (function(module) {
 
-eval("require")("encoding");
+module.exports = eval("require")("encoding");
 
 
 /***/ }),
