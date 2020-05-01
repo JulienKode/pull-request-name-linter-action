@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/jest": "25.1.1",
     "@types/node": "12.12.37",
-    "@typescript-eslint/parser": "2.19.0",
+    "@typescript-eslint/parser": "2.30.0",
     "@zeit/ncc": "0.22.1",
     "eslint": "6.8.0",
     "eslint-plugin-github": "2.0.0",
