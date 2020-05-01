@@ -8,5 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: |
-        npm install
-        npm run all
+        yarn
+        yarn all
