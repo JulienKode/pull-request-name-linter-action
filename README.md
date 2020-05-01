@@ -1,4 +1,11 @@
-[![Actions Status](https://github.com/JulienKode/pull-request-name-linter-action/workflows/build-test/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
+[![build](https://github.com/JulienKode/pull-request-name-linter-action/workflows/build/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
+[![test](https://github.com/JulienKode/pull-request-name-linter-action/workflows/test/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
+[![GitHub issues](https://img.shields.io/github/issues/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/issues)
+[![GitHub forks](https://img.shields.io/github/forks/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/network)
+[![GitHub stars](https://img.shields.io/github/stars/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/stargazers)
+[![GitHub license](https://img.shields.io/github/license/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/blob/master/LICENSE)
+[![Watch on GitHub](https://img.shields.io/github/watchers/JulienKode/pull-request-name-linter-action.svg?style=social)](https://github.com/JulienKode/pull-request-name-linter-action/watchers)
+[![Tweet](https://img.shields.io/twitter/url/https/github.com/JulienKode/pull-request-name-linter-action.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout%20this%20library%20https%3A%2F%2Fgithub.com%2FJulienKode%2Fpull-request-name-linter-action)
 
 **GitHub action** to automatically **lint pull request name** with [**commitlint**](https://commitlint.js.org).
 This is useful if squash merge your pull request for example.
