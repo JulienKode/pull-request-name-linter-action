@@ -1,4 +1,4 @@
-# Pull request name linter with commitlint
+# ⚡️ Pull request name linter with commitlint ⚡️
 ---
 [![build](https://github.com/JulienKode/pull-request-name-linter-action/workflows/build/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
 [![test](https://github.com/JulienKode/pull-request-name-linter-action/workflows/test/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
