@@ -41,7 +41,7 @@
     "typescript": "3.9.7"
   },
   "dependencies": {
-    "@actions/core": "1.2.4",
+    "@actions/core": "1.2.5",
     "@actions/github": "2.1.1",
     "@commitlint/lint": "8.3.5",
     "@commitlint/load": "8.3.5"
