@@ -1,7 +1,6 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import lint from '@commitlint/lint'
-import load from '@commitlint/load'
+import {lintPullRequest} from './linter'
 
 async function run(): Promise<void> {
   try {
@@ -25,22 +24,6 @@ function getPrTitle(): string | undefined {
   }
 
   return pullRequest.title
-}
-
-export async function lintPullRequest(title: string, configPath: string) {
-  const opts = await load({}, {file: configPath, cwd: process.cwd()})
-
-  const result = await lint(
-    title,
-    opts.rules,
-    opts.parserPreset ? {parserOpts: opts.parserPreset.parserOpts} : {}
-  )
-  if (result.valid === true) return
-
-  const errorMessage = result.errors
-    .map(({message, name}: any) => `${name}:${message}`)
-    .join('\n')
-  throw new Error(errorMessage)
 }
 
 run()
