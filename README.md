@@ -15,6 +15,8 @@ This is useful if squash merge your pull request for example.
 
 **Note**: If you are looking to lint the commits of your pull request with commitlint you can use [commitlint-github-action](https://github.com/wagoid/commitlint-github-action)
 
+This package are using the commitlint 11 version
+
 ## Configuration
 
 ## Usage
@@ -37,7 +39,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install Dependencies
       run: npm install @commitlint/config-conventional
-    - uses: JulienKode/pull-request-name-linter-action@v0.1.2
+    - uses: JulienKode/pull-request-name-linter-action@v0.2.0
 ```
 
 **Note**: make sure you install your dependencies that commitlint use 
