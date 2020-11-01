@@ -27,7 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "@commitlint/types": "11.0.0",
-    "@types/jest": "26.0.14",
+    "@types/jest": "26.0.15",
     "@types/node": "12.12.37",
     "@typescript-eslint/parser": "4.3.0",
     "@vercel/ncc": "0.24.1",
