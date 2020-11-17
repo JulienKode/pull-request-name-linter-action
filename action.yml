@@ -7,8 +7,8 @@ inputs:
     required: false
     default: './commitlint.config.js'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: docker
+  image: docker://wagoid/commitlint-github-action:2.1.1
 branding:
   icon: 'users'
   color: 'blue'
