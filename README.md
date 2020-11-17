@@ -37,12 +37,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Install Dependencies
-      run: npm install @commitlint/config-conventional
     - uses: JulienKode/pull-request-name-linter-action@v0.2.0
 ```
 
-**Note**: make sure you install your dependencies that commitlint use 
+## About `extends` in your config file
+
+(copied from https://github.com/wagoid/commitlint-github-action/blob/master/README.md ;-), as this also applies to this action. thanks!)
+This is a [`Docker` action](https://github.com/actions/toolkit/blob/e2adf403d6d14a9ca7474976ccaca20f72ff8209/docs/action-types.md#why-would-i-choose-a-docker-action), and was made like this so that you can run it with minimum setup, regardless of your repo's environment. It comes packed with the most famous shared configurations that you can use in your commitlint config's `extends` field:
+
+- [@commitlint/config-angular](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-angular)
+- [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
+- [@commitlint/config-lerna-scopes](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-lerna-scopes)
+- [@commitlint/config-patternplate](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-patternplate)
+- [conventional-changelog-lint-config-canonical](https://github.com/gajus/conventional-changelog-lint-config-canonical)
+- [commitlint-config-jira](https://github.com/Gherciu/commitlint-jira)
+
+Apart from the shared configurations that are included by default, you can also include extra dependencies for other configs and plugins that you want to use.
 
 ## Example 
 
