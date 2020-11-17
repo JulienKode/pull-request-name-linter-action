@@ -8,8 +8,7 @@ inputs:
     default: './commitlint.config.js'
 runs:
   using: docker
-  image: docker://wagoid/commitlint-github-action:2.1.1
-  main: 'dist/index.js'
+  image: docker://hokify/pull-request-name-linter:latest
 branding:
   icon: 'users'
   color: 'blue'
