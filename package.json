@@ -40,7 +40,7 @@
     "js-yaml": "3.14.1",
     "prettier": "2.2.1",
     "ts-jest": "25.4.0",
-    "typescript": "3.9.7"
+    "typescript": "3.9.10"
   },
   "dependencies": {
     "@actions/core": "1.2.6",
