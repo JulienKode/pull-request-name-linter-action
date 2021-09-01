@@ -35,11 +35,11 @@
     "eslint-plugin-github": "3.4.1",
     "eslint-plugin-jest": "24.4.0",
     "eslint-plugin-prettier": "3.4.1",
-    "jest": "25.5.4",
-    "jest-circus": "25.5.4",
+    "jest": "27.1.0",
+    "jest-circus": "27.1.0",
     "js-yaml": "4.1.0",
     "prettier": "2.3.2",
-    "ts-jest": "25.5.1",
+    "ts-jest": "27.0.5",
     "typescript": "3.9.10"
   },
   "dependencies": {
