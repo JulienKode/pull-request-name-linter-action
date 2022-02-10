@@ -1,7 +1,6 @@
 # ⚡️ Pull request name linter with commitlint ⚡️
 ---
 [![build](https://github.com/JulienKode/pull-request-name-linter-action/workflows/build/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
-[![test](https://github.com/JulienKode/pull-request-name-linter-action/workflows/test/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
 [![GitHub issues](https://img.shields.io/github/issues/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/issues)
 [![GitHub forks](https://img.shields.io/github/forks/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/network)
 [![GitHub stars](https://img.shields.io/github/stars/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/stargazers)
