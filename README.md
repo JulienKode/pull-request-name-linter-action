@@ -39,7 +39,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Install Dependencies
       run: npm install @commitlint/config-conventional
-    - uses: JulienKode/pull-request-name-linter-action@v0.2.0
+    - uses: JulienKode/pull-request-name-linter-action@v0.4.0
 ```
 
 **Note**: make sure you install your dependencies that commitlint use 
