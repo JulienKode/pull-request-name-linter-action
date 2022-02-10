@@ -20,15 +20,15 @@ function selectParserOpts(parserPreset: ParserPreset) {
 }
 
 function getLintOptions(configuration: QualifiedConfig): LintOptions {
-  const parserOpts = selectParserOpts(configuration.parserPreset)
   const opts: LintOptions & {parserOpts: ParserOptions} = {
     parserOpts: {},
     plugins: {},
     ignores: [],
     defaultIgnores: true
   }
-  if (parserOpts) {
-    opts.parserOpts = parserOpts
+  if (configuration.parserPreset) {
+    const parserOpts = selectParserOpts(configuration.parserPreset)
+    if (parserOpts) opts.parserOpts = parserOpts
   }
   if (configuration.plugins) {
     opts.plugins = configuration.plugins
