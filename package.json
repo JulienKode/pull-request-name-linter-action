@@ -28,7 +28,7 @@
   "devDependencies": {
     "@commitlint/types": "16.2.1",
     "@types/jest": "27.5.2",
-    "@types/node": "16.11.38",
+    "@types/node": "16.11.42",
     "@typescript-eslint/parser": "5.22.0",
     "@vercel/ncc": "0.33.4",
     "eslint": "7.32.0",
