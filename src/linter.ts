@@ -7,13 +7,13 @@ import {
 import load from '@commitlint/load'
 import lint from '@commitlint/lint'
 
-function selectParserOpts(parserPreset: ParserPreset) {
+function selectParserOpts(parserPreset: ParserPreset): object | null {
   if (typeof parserPreset !== 'object') {
-    return undefined
+    return null
   }
 
   if (typeof parserPreset.parserOpts !== 'object') {
-    return undefined
+    return null
   }
 
   return parserPreset.parserOpts
@@ -42,7 +42,10 @@ function getLintOptions(configuration: QualifiedConfig): LintOptions {
   return opts
 }
 
-export async function lintPullRequest(title: string, configPath: string) {
+export async function lintPullRequest(
+  title: string,
+  configPath: string
+): Promise<void> {
   const configuration = await load({}, {file: configPath, cwd: process.cwd()})
 
   const options = getLintOptions(configuration)
@@ -51,7 +54,7 @@ export async function lintPullRequest(title: string, configPath: string) {
 
   if (result.valid) return
   const errorMessage = result.errors
-    .map(({message, name}: any) => `${name}:${message}`)
+    .map(({message, name}) => `${name}:${message}`)
     .join('\n')
   throw new Error(errorMessage)
 }
