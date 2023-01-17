@@ -12,8 +12,12 @@ async function run(): Promise<void> {
     }
     await lintPullRequest(title, configPath)
   } catch (error) {
-    core.error(error)
-    core.setFailed(error.message)
+    if (error instanceof Error) {
+      core.error(error)
+      core.setFailed(error.message)
+    } else {
+      core.setFailed('Unknown error.')
+    }
   }
 }
 
