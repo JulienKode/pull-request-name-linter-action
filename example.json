@@ -1,0 +1,11 @@
+{
+  "pull_request": {
+    "title": "feat: update the README with new information",
+    "head": {
+      "ref": "sample-head-ref"
+    },
+    "base": {
+      "ref": "sample-base-ref"
+    }
+  }
+}
