@@ -3,11 +3,12 @@
   "extends": ["plugin:github/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 9,
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
   "rules": {
+    "i18n-text/no-en": "off",
     "eslint-comments/no-use": "off",
     "import/no-namespace": "off",
     "no-unused-vars": "off",
@@ -48,7 +49,6 @@
   },
   "env": {
     "node": true,
-    "es6": true,
-    "jest/globals": true
+    "es6": true
   }
 }
