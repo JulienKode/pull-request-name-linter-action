@@ -26,7 +26,7 @@
   "author": "Julien Karst",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/types": "17.0.0",
+    "@commitlint/types": "17.8.1",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.45",
     "@typescript-eslint/parser": "5.30.7",
@@ -45,8 +45,8 @@
   "dependencies": {
     "@actions/core": "1.9.0",
     "@actions/github": "5.0.3",
-    "@commitlint/lint": "17.0.3",
-    "@commitlint/load": "17.0.3"
+    "@commitlint/lint": "17.8.1",
+    "@commitlint/load": "17.8.1"
   },
   "resolutions": {
     "import-fresh": "JulienKode/import-fresh#fix/issue-when-there-no-parent-module"
