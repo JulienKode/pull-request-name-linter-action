@@ -1,5 +1,5 @@
 name: 'Pull request linter action'
-description: "Lint your pull request name based on commitlint configuration"
+description: 'Lint your pull request name based on commitlint configuration'
 author: 'Julien Karst'
 inputs:
   configuration-path:

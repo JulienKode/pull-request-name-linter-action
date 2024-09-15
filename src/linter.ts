@@ -1,13 +1,9 @@
-import {
-  LintOptions,
-  ParserOptions,
-  ParserPreset,
-  QualifiedConfig
-} from '@commitlint/types'
+import { LintOptions, ParserPreset, QualifiedConfig } from '@commitlint/types'
 import load from '@commitlint/load'
 import lint from '@commitlint/lint'
+import { Options } from 'conventional-commits-parser'
 
-function selectParserOpts(parserPreset: ParserPreset) {
+function selectParserOpts(parserPreset: ParserPreset): Options | undefined {
   if (typeof parserPreset !== 'object') {
     return undefined
   }
@@ -16,12 +12,16 @@ function selectParserOpts(parserPreset: ParserPreset) {
     return undefined
   }
 
-  return parserPreset.parserOpts
+  return parserPreset.parserOpts ?? undefined
 }
 
 function getLintOptions(configuration: QualifiedConfig): LintOptions {
+  if (!configuration.parserPreset) {
+    throw new Error('Missing parser preset')
+  }
+
   const parserOpts = selectParserOpts(configuration.parserPreset)
-  const opts: LintOptions & {parserOpts: ParserOptions} = {
+  const opts: LintOptions = {
     parserOpts: {},
     plugins: {},
     ignores: [],
@@ -42,8 +42,11 @@ function getLintOptions(configuration: QualifiedConfig): LintOptions {
   return opts
 }
 
-export async function lintPullRequest(title: string, configPath: string) {
-  const configuration = await load({}, {file: configPath, cwd: process.cwd()})
+export async function lintPullRequest(
+  title: string,
+  configPath: string
+): Promise<void> {
+  const configuration = await load({}, { file: configPath, cwd: process.cwd() })
 
   const options = getLintOptions(configuration)
 
@@ -51,7 +54,7 @@ export async function lintPullRequest(title: string, configPath: string) {
 
   if (result.valid) return
   const errorMessage = result.errors
-    .map(({message, name}: any) => `${name}:${message}`)
+    .map(({ message, name }) => `${name}:${message}`)
     .join('\n')
   throw new Error(errorMessage)
 }

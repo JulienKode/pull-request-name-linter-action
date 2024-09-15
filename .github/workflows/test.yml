@@ -1,4 +1,4 @@
-name: "test"
+name: 'test'
 on:
   pull_request:
     types: ['opened', 'edited', 'reopened', 'synchronize']
@@ -7,8 +7,8 @@ jobs:
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - run: |
-        yarn
-        yarn build:pack
-    - uses: ./
+      - uses: actions/checkout@v1
+      - run: |
+          yarn
+          yarn build:pack
+      - uses: ./

@@ -1,11 +1,15 @@
 module.exports = {
+  preset: 'ts-jest',
+  verbose: true,
   clearMocks: true,
-  moduleFileExtensions: ['js', 'ts'],
   testEnvironment: 'node',
+  moduleFileExtensions: ['js', 'ts'],
   testMatch: ['**/*.test.ts'],
-  testRunner: 'jest-circus/runner',
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   transform: {
     '^.+\\.ts$': 'ts-jest'
   },
-  verbose: true
+  coverageReporters: ['json-summary', 'text', 'lcov'],
+  collectCoverage: true,
+  collectCoverageFrom: ['./src/**']
 }
