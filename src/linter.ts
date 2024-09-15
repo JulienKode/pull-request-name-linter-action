@@ -20,7 +20,6 @@ function getLintOptions(configuration: QualifiedConfig): LintOptions {
     throw new Error('Missing parser preset')
   }
 
-  const parserOpts = selectParserOpts(configuration.parserPreset)
   const opts: LintOptions = {
     parserOpts: {},
     plugins: {},
