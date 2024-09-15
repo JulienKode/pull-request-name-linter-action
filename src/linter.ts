@@ -1,4 +1,8 @@
-import { LintOptions, ParserPreset, QualifiedConfig } from '@commitlint/types'
+import type {
+  LintOptions,
+  ParserPreset,
+  QualifiedConfig
+} from '@commitlint/types'
 import load from '@commitlint/load'
 import lint from '@commitlint/lint'
 import { Options } from 'conventional-commits-parser'
@@ -16,10 +20,6 @@ function selectParserOpts(parserPreset: ParserPreset): Options | null {
 }
 
 function getLintOptions(configuration: QualifiedConfig): LintOptions {
-  if (!configuration.parserPreset) {
-    throw new Error('Missing parser preset')
-  }
-
   const opts: LintOptions = {
     parserOpts: {},
     plugins: {},
