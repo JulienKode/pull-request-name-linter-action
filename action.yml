@@ -7,7 +7,7 @@ inputs:
     required: false
     default: './commitlint.config.js'
 runs:
-  using: 'node18'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   icon: 'users'
