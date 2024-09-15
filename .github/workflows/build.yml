@@ -1,4 +1,4 @@
-name: "build"
+name: 'build'
 on:
   push:
 
@@ -6,7 +6,13 @@ jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - run: |
-        yarn
-        yarn all
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        id: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: |
+          yarn
+          yarn all

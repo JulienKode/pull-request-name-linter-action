@@ -1,13 +1,13 @@
-import {
+import type {
   LintOptions,
-  ParserOptions,
   ParserPreset,
   QualifiedConfig
 } from '@commitlint/types'
 import load from '@commitlint/load'
 import lint from '@commitlint/lint'
+import { Options } from 'conventional-commits-parser'
 
-function selectParserOpts(parserPreset: ParserPreset): object | null {
+function selectParserOpts(parserPreset: ParserPreset): Options | null {
   if (typeof parserPreset !== 'object') {
     return null
   }
@@ -20,7 +20,7 @@ function selectParserOpts(parserPreset: ParserPreset): object | null {
 }
 
 function getLintOptions(configuration: QualifiedConfig): LintOptions {
-  const opts: LintOptions & {parserOpts: ParserOptions} = {
+  const opts: LintOptions = {
     parserOpts: {},
     plugins: {},
     ignores: [],
@@ -46,7 +46,7 @@ export async function lintPullRequest(
   title: string,
   configPath: string
 ): Promise<void> {
-  const configuration = await load({}, {file: configPath, cwd: process.cwd()})
+  const configuration = await load({}, { file: configPath, cwd: process.cwd() })
 
   const options = getLintOptions(configuration)
 
@@ -54,7 +54,7 @@ export async function lintPullRequest(
 
   if (result.valid) return
   const errorMessage = result.errors
-    .map(({message, name}) => `${name}:${message}`)
+    .map(({ message, name }) => `${name}:${message}`)
     .join('\n')
   throw new Error(errorMessage)
 }

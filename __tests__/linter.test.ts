@@ -1,4 +1,4 @@
-import {lintPullRequest} from '../src/linter'
+import { lintPullRequest } from '../src/linter.mts'
 
 test('should lint the title correctly', async () => {
   // Given
