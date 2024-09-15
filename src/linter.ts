@@ -3,16 +3,16 @@ import load from '@commitlint/load'
 import lint from '@commitlint/lint'
 import { Options } from 'conventional-commits-parser'
 
-function selectParserOpts(parserPreset: ParserPreset): Options | undefined {
+function selectParserOpts(parserPreset: ParserPreset): Options | null {
   if (typeof parserPreset !== 'object') {
-    return undefined
+    return null
   }
 
   if (typeof parserPreset.parserOpts !== 'object') {
-    return undefined
+    return null
   }
 
-  return parserPreset.parserOpts ?? undefined
+  return parserPreset.parserOpts
 }
 
 function getLintOptions(configuration: QualifiedConfig): LintOptions {
@@ -27,8 +27,9 @@ function getLintOptions(configuration: QualifiedConfig): LintOptions {
     ignores: [],
     defaultIgnores: true
   }
-  if (parserOpts) {
-    opts.parserOpts = parserOpts
+  if (configuration.parserPreset) {
+    const parserOpts = selectParserOpts(configuration.parserPreset)
+    if (parserOpts) opts.parserOpts = parserOpts
   }
   if (configuration.plugins) {
     opts.plugins = configuration.plugins

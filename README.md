@@ -3,7 +3,6 @@
 ---
 
 [![build](https://github.com/JulienKode/pull-request-name-linter-action/workflows/build/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
-[![test](https://github.com/JulienKode/pull-request-name-linter-action/workflows/test/badge.svg)](https://github.com/JulienKode/pull-request-name-linter-action/actions)
 [![GitHub issues](https://img.shields.io/github/issues/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/issues)
 [![GitHub forks](https://img.shields.io/github/forks/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/network)
 [![GitHub stars](https://img.shields.io/github/stars/JulienKode/pull-request-name-linter-action?style=flat-square)](https://github.com/JulienKode/pull-request-name-linter-action/stargazers)
@@ -46,7 +45,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Install Dependencies
         run: npm install @commitlint/config-conventional
-      - uses: JulienKode/pull-request-name-linter-action@v0.2.0
+      - uses: JulienKode/pull-request-name-linter-action@v0.5.0
 ```
 
 **Note**: make sure you install your dependencies that commitlint use
