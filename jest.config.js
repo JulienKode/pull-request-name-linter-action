@@ -7,5 +7,9 @@ module.exports = {
   transform: {
     '^.+\\.ts$': 'ts-jest'
   },
+  moduleNameMapper: {
+    '@commitlint/load': '<rootDir>/test/__mocks__/commitlint-load.js',
+    '@commitlint/lint': '<rootDir>/test/__mocks__/commitlint-lint.js'
+  },
   verbose: true
 }

@@ -4,7 +4,11 @@ import {lintPullRequest} from './linter'
 
 async function run(): Promise<void> {
   try {
-    const configPath = core.getInput('configuration-path', {required: true})
+    core.debug(
+      `RAW INPUT_CONFIGURATION-PATH env: ${process.env['INPUT_CONFIGURATION-PATH']}`
+    )
+    const configPath =
+      core.getInput('configuration-path') || './commitlint.config.js'
     const title = getPrTitle()
     if (!title) {
       core.debug('Could not get pull request title from context, exiting')
@@ -12,8 +16,9 @@ async function run(): Promise<void> {
     }
     await lintPullRequest(title, configPath)
   } catch (error) {
-    core.error(error)
-    core.setFailed(error.message)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    core.error(errorMessage)
+    core.setFailed(errorMessage)
   }
 }
 

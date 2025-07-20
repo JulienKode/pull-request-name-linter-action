@@ -1,9 +1,5 @@
-import {
-  LintOptions,
-  ParserOptions,
-  ParserPreset,
-  QualifiedConfig
-} from '@commitlint/types'
+import {LintOptions, ParserPreset, QualifiedConfig} from '@commitlint/types'
+import type {Options as ParserOptions} from 'conventional-commits-parser'
 import load from '@commitlint/load'
 import lint from '@commitlint/lint'
 
