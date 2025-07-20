@@ -35,7 +35,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Install Dependencies
       run: npm install @commitlint/config-conventional
     - uses: JulienKode/pull-request-name-linter-action@v19.0.0
