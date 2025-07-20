@@ -4,6 +4,7 @@
   "private": true,
   "description": "Run commitlint on pull request name.",
   "main": "lib/main.js",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
