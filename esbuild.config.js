@@ -29,6 +29,19 @@ const config = {
             fs.mkdirSync(templatesDir, {recursive: true})
           }
 
+          // Copy specific template files
+          const templateSrc =
+            'node_modules/conventional-changelog-angular/templates'
+          if (fs.existsSync(templateSrc)) {
+            try {
+              execSync(`cp ${templateSrc}/*.hbs ${templatesDir}/`, {
+                stdio: 'ignore'
+              })
+            } catch (e) {
+              console.warn('Warning: Could not copy template files:', e.message)
+            }
+          }
+
           const contents = await fs.promises.readFile(args.path, 'utf8')
           const transformedContents = contents.replace(
             /import\.meta\.url/g,
