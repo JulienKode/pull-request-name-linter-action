@@ -23,6 +23,12 @@ const config = {
       name: 'import-meta-url',
       setup(build) {
         build.onLoad({filter: /\.js$/}, async args => {
+          const templatesDir = 'dist/templates'
+
+          if (!fs.existsSync(templatesDir)) {
+            fs.mkdirSync(templatesDir, {recursive: true})
+          }
+
           const contents = await fs.promises.readFile(args.path, 'utf8')
           const transformedContents = contents.replace(
             /import\.meta\.url/g,
