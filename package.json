@@ -1,6 +1,6 @@
 {
   "name": "pull-request-commitlint-action",
-  "version": "19.0.0",
+  "version": "20.1.0",
   "private": true,
   "description": "Run commitlint on pull request name.",
   "main": "lib/main.js",
