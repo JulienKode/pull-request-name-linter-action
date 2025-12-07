@@ -6,6 +6,22 @@ const DIST_INDEX = path.join(ROOT_DIR, 'dist', 'index.js')
 const FIXTURES_DIR = path.join(__dirname, 'fixtures')
 const COMMITLINT_CONFIG = path.join(ROOT_DIR, 'commitlint.config.js')
 
+interface ExecError {
+  status: number | null
+  stdout: Buffer | null
+  stderr: Buffer | null
+}
+
+function isExecError(error: unknown): error is ExecError {
+  return (
+    typeof error === 'object' &&
+    error !== null &&
+    'status' in error &&
+    'stdout' in error &&
+    'stderr' in error
+  )
+}
+
 function runAction(eventPath: string): {exitCode: number; output: string} {
   const options: ExecFileSyncOptions = {
     cwd: ROOT_DIR,
@@ -20,13 +36,15 @@ function runAction(eventPath: string): {exitCode: number; output: string} {
     const output = execFileSync('node', [DIST_INDEX], options)
     return {exitCode: 0, output: output?.toString() ?? ''}
   } catch (error) {
-    const execError = error
-    return {
-      exitCode: execError.status ?? 1,
-      output: `${execError.stdout?.toString() ?? ''}\n${
-        execError.stderr?.toString() ?? ''
-      }`
+    if (isExecError(error)) {
+      return {
+        exitCode: error.status ?? 1,
+        output: `${error.stdout?.toString() ?? ''}\n${
+          error.stderr?.toString() ?? ''
+        }`
+      }
     }
+    return {exitCode: 1, output: String(error)}
   }
 }
 
