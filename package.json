@@ -14,7 +14,7 @@
     "test": "jest --config jest.config.js",
     "test:e2e": "jest --config e2e/jest.config.js",
     "build:pack": "pnpm build && pnpm bundle",
-    "all": "pnpm build && pnpm test && pnpm test:e2e && pnpm bundle"
+    "all": "pnpm build && pnpm test && pnpm bundle && pnpm test:e2e"
   },
   "repository": {
     "type": "git",
