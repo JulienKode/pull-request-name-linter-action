@@ -1,3 +1,5 @@
+.pnpm-store/
+
 # Dependency directory
 node_modules
 
