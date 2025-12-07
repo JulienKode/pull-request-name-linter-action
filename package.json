@@ -13,8 +13,8 @@
     "bundle": "node esbuild.config.js",
     "test": "jest --config jest.config.js",
     "test:e2e": "jest --config e2e/jest.config.js",
-    "build:pack": "yarn build && yarn bundle",
-    "all": "yarn build && npm-run-all test test:e2e && yarn bundle"
+    "build:pack": "pnpm build && pnpm bundle",
+    "all": "pnpm build && pnpm test && pnpm test:e2e && pnpm bundle"
   },
   "repository": {
     "type": "git",
@@ -52,7 +52,9 @@
     "@commitlint/lint": "20.0.0",
     "@commitlint/load": "20.1.0"
   },
-  "resolutions": {
-    "import-fresh": "JulienKode/import-fresh#fix/issue-when-there-no-parent-module"
+  "pnpm": {
+    "overrides": {
+      "import-fresh": "JulienKode/import-fresh#fix/issue-when-there-no-parent-module"
+    }
   }
 }

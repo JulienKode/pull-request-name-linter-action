@@ -1,4 +1,4 @@
-import {execSync, ExecSyncOptions} from 'child_process'
+import {execFileSync, ExecFileSyncOptions} from 'child_process'
 import path from 'path'
 
 const ROOT_DIR = path.resolve(__dirname, '..')
@@ -7,7 +7,7 @@ const FIXTURES_DIR = path.join(__dirname, 'fixtures')
 const COMMITLINT_CONFIG = path.join(ROOT_DIR, 'commitlint.config.js')
 
 function runAction(eventPath: string): {exitCode: number; output: string} {
-  const options: ExecSyncOptions = {
+  const options: ExecFileSyncOptions = {
     cwd: ROOT_DIR,
     env: {
       ...process.env,
@@ -17,7 +17,7 @@ function runAction(eventPath: string): {exitCode: number; output: string} {
   }
 
   try {
-    const output = execSync(`node ${DIST_INDEX}`, options)
+    const output = execFileSync('node', [DIST_INDEX], options)
     return {exitCode: 0, output: output?.toString() ?? ''}
   } catch (error) {
     const execError = error
