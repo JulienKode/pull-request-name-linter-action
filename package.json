@@ -11,9 +11,10 @@
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "bundle": "node esbuild.config.js",
-    "test": "jest",
+    "test": "jest --config jest.config.js",
+    "test:e2e": "jest --config e2e/jest.config.js",
     "build:pack": "yarn build && yarn bundle",
-    "all": "yarn build && yarn test && yarn bundle"
+    "all": "yarn build && npm-run-all test test:e2e && yarn bundle"
   },
   "repository": {
     "type": "git",
