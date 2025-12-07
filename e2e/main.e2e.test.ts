@@ -20,10 +20,12 @@ function runAction(eventPath: string): {exitCode: number; output: string} {
     const output = execSync(`node ${DIST_INDEX}`, options)
     return {exitCode: 0, output: output?.toString() ?? ''}
   } catch (error) {
-    const execError = error as {status: number; stdout: Buffer; stderr: Buffer}
+    const execError = error
     return {
       exitCode: execError.status ?? 1,
-      output: (execError.stdout?.toString() ?? '') + (execError.stderr?.toString() ?? '')
+      output: `${execError.stdout?.toString() ?? ''}\n${
+        execError.stderr?.toString() ?? ''
+      }`
     }
   }
 }
@@ -44,5 +46,3 @@ describe('E2E: Pull Request Linter Action', () => {
     expect(result.output).toContain('scope-case')
   })
 })
-
-
