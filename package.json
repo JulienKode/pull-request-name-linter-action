@@ -49,7 +49,7 @@
     "@actions/core": "1.9.1",
     "@actions/github": "5.1.1",
     "@commitlint/lint": "20.0.0",
-    "@commitlint/load": "20.1.0"
+    "@commitlint/load": "20.2.0"
   },
   "resolutions": {
     "import-fresh": "JulienKode/import-fresh#fix/issue-when-there-no-parent-module"
