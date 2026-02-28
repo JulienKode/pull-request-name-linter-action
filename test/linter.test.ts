@@ -1,3 +1,4 @@
+import {test, expect} from 'vitest'
 import {lintPullRequest} from '../src/linter'
 
 test('should lint the title correctly', async () => {

@@ -1,0 +1,8 @@
+{
+  "pull_request": {
+    "number": 1,
+    "title": "feat(valid): add new feature",
+    "head": {"ref": "feature-branch"},
+    "base": {"ref": "main"}
+  }
+}
