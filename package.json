@@ -27,7 +27,6 @@
   "author": "Julien Karst",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/types": "20.0.0",
     "@types/node": "20.11.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",

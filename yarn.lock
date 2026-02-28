@@ -267,7 +267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:20.0.0, @commitlint/types@npm:^20.0.0":
+"@commitlint/types@npm:^20.0.0":
   version: 20.0.0
   resolution: "@commitlint/types@npm:20.0.0"
   dependencies:
@@ -5620,7 +5620,6 @@ __metadata:
     "@actions/github": "npm:5.1.1"
     "@commitlint/lint": "npm:20.0.0"
     "@commitlint/load": "npm:20.1.0"
-    "@commitlint/types": "npm:20.0.0"
     "@types/node": "npm:20.11.0"
     "@typescript-eslint/eslint-plugin": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.62.0"
