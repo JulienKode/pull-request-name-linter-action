@@ -18,4 +18,5 @@ jobs:
     - run: |
         pnpm install
         pnpm build:pack
+        pnpm test:e2e
     - uses: ./
