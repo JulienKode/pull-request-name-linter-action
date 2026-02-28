@@ -3,6 +3,7 @@
   "version": "20.1.0",
   "private": true,
   "description": "Run commitlint on pull request name.",
+  "packageManager": "pnpm@10.25.0",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -12,8 +13,8 @@
     "bundle": "node esbuild.config.js",
     "test": "vitest run",
     "test:e2e": "vitest run --config vitest.e2e.config.ts",
-    "build:pack": "yarn build && yarn bundle",
-    "all": "yarn build && yarn test && yarn bundle"
+    "build:pack": "pnpm build && pnpm bundle",
+    "all": "pnpm build && pnpm test && pnpm bundle"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,13 @@
     "@commitlint/lint": "20.0.0",
     "@commitlint/load": "20.1.0"
   },
-  "resolutions": {
-    "import-fresh": "JulienKode/import-fresh#fix/issue-when-there-no-parent-module"
+  "pnpm": {
+    "overrides": {
+      "import-fresh": "JulienKode/import-fresh#fix/issue-when-there-no-parent-module",
+      "@commitlint/types": "20.0.0"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

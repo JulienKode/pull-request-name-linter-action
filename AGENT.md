@@ -20,31 +20,31 @@ The action reads PR title from `github.context.payload.pull_request.title` and v
 
 ```bash
 # Build TypeScript to lib/
-yarn build
+pnpm build
 
 # Bundle with esbuild to dist/index.js
-yarn bundle
+pnpm bundle
 
-# Run tests
-yarn test
+# Run unit tests
+pnpm test
 
-# Run tests for a specific file
-yarn test linter.test
+# Run e2e tests (requires dist/index.js to exist)
+pnpm test:e2e
 
 # Lint code
-yarn lint
+pnpm lint
 
 # Format code
-yarn format
+pnpm format
 
 # Check formatting
-yarn format-check
+pnpm format-check
 
 # Full build, test, and bundle pipeline
-yarn all
+pnpm all
 
 # Build and bundle together
-yarn build:pack
+pnpm build:pack
 ```
 
 ## Build Process
@@ -61,10 +61,15 @@ The project uses a two-step build:
 
 ## Testing
 
-Tests use Jest with mocked `@commitlint/load` and `@commitlint/lint` modules (see jest.config.js and test/__mocks__/). When adding tests:
-- Mocks are in `test/__mocks__/commitlint-{load,lint}.js`
+Tests use Vitest. There are two test suites:
+
+- **Unit tests** (`test/linter.test.ts`): Tests `lintPullRequest()` directly using real commitlint with fixture config files in `test/e2e/fixtures/configs/`.
+- **E2E tests** (`test/e2e/e2e.test.ts`): Spawns `node dist/index.js` as a child process with controlled environment variables simulating GitHub Actions execution. Requires `pnpm build:pack` first.
+
+When adding tests:
 - Test files match `**/*.test.ts`
-- Tests validate both valid and invalid PR title formats
+- Use fixture configs in `test/e2e/fixtures/configs/` for commitlint rules
+- Use fixture events in `test/e2e/fixtures/events/` for GitHub webhook payloads
 
 ## Configuration
 
@@ -73,10 +78,10 @@ The action accepts one input parameter:
 
 Example commitlint config format (commitlint.config.js):
 ```javascript
-module.exports = { 
-  rules: { 
-    "scope-case": [2, "always", "lower-case"] 
-  } 
+module.exports = {
+  rules: {
+    "scope-case": [2, "always", "lower-case"]
+  }
 }
 ```
 
@@ -84,4 +89,5 @@ module.exports = {
 
 - `@commitlint/load`: Loads commitlint configurations with plugin support
 - `@commitlint/lint`: Validates commit messages against rules
-- Custom resolution for `import-fresh` to handle missing parent module issue
+- Custom pnpm override for `import-fresh` to handle missing parent module issue
+- `@commitlint/types` pinned to `20.0.0` via pnpm override to prevent version drift with `conventional-commits-parser` types
