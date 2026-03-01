@@ -52,8 +52,8 @@ importers:
         specifier: 3.4.1
         version: 3.4.1(@babel/plugin-syntax-flow@7.28.6(@babel/core@7.29.0))(@babel/plugin-transform-react-jsx@7.28.6(@babel/core@7.29.0))(@types/node@20.11.0)(eslint@8.56.0)(flow-bin@0.303.0)(graphql@16.13.0)(typescript@4.9.5)
       eslint-plugin-prettier:
-        specifier: 4.2.1
-        version: 4.2.1(eslint-config-prettier@10.1.8(eslint@8.56.0))(eslint@8.56.0)(prettier@2.8.8)
+        specifier: 4.2.5
+        version: 4.2.5(eslint-config-prettier@10.1.8(eslint@8.56.0))(eslint@8.56.0)(prettier@2.8.8)
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
@@ -1289,8 +1289,8 @@ packages:
   camel-case@4.1.2:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
 
-  caniuse-lite@1.0.30001774:
-    resolution: {integrity: sha512-DDdwPGz99nmIEv216hKSgLD+D4ikHQHjBC/seF98N9CPqRX4M5mSxT9eTV6oyisnJcuzxtZy4n17yKKQYmYQOA==}
+  caniuse-lite@1.0.30001775:
+    resolution: {integrity: sha512-s3Qv7Lht9zbVKE9XoTyRG6wVDCKdtOFIjBGg3+Yhn6JaytuNKPIjBMTMIY1AnOH3seL5mvF+x33oGAyK3hVt3A==}
 
   chai@6.2.2:
     resolution: {integrity: sha512-NUPRluOfOiTKBKvWPtSD4PhFvWCqOi0BGStNWs57X9js7XGTprSmFoz5F0tWhR4WPjNeR9jXqdC7/UpSJTnlRg==}
@@ -1606,8 +1606,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-prettier@4.2.1:
-    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
+  eslint-plugin-prettier@4.2.5:
+    resolution: {integrity: sha512-9Ni+xgemM2IWLq6aXEpP2+V/V30GeA/46Ar629vcMqVPodFFWC9skHu/D1phvuqtS8bJCFnNf01/qcmqYEwNfg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: '>=7.28.0'
@@ -4175,7 +4175,7 @@ snapshots:
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.10.0
-      caniuse-lite: 1.0.30001774
+      caniuse-lite: 1.0.30001775
       electron-to-chromium: 1.5.302
       node-releases: 2.0.27
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
@@ -4211,7 +4211,7 @@ snapshots:
       pascal-case: 3.1.2
       tslib: 2.2.0
 
-  caniuse-lite@1.0.30001774: {}
+  caniuse-lite@1.0.30001775: {}
 
   chai@6.2.2: {}
 
@@ -4597,7 +4597,7 @@ snapshots:
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.56.0)(typescript@4.9.5))(eslint@8.56.0)(supports-color@7.2.0)
       eslint-plugin-jsdoc: 62.7.1(eslint@8.56.0)(supports-color@7.2.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.56.0)
-      eslint-plugin-prettier: 4.2.1(eslint-config-prettier@10.1.8(eslint@8.56.0))(eslint@8.56.0)(prettier@2.8.8)
+      eslint-plugin-prettier: 4.2.5(eslint-config-prettier@10.1.8(eslint@8.56.0))(eslint@8.56.0)(prettier@2.8.8)
       eslint-plugin-react: 7.37.5(eslint@8.56.0)
       eslint-plugin-relay: 2.0.0
       eslint-rule-documentation: 1.0.23
@@ -4701,7 +4701,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-prettier@4.2.1(eslint-config-prettier@10.1.8(eslint@8.56.0))(eslint@8.56.0)(prettier@2.8.8):
+  eslint-plugin-prettier@4.2.5(eslint-config-prettier@10.1.8(eslint@8.56.0))(eslint@8.56.0)(prettier@2.8.8):
     dependencies:
       eslint: 8.56.0
       prettier: 2.8.8
