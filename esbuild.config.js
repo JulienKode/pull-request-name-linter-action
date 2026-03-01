@@ -1,6 +1,9 @@
 const {build: esbuild} = require('esbuild')
+const {createRequire} = require('module')
 const fs = require('fs')
 const path = require('path')
+
+const commitlintRequire = createRequire(require.resolve('@commitlint/load'))
 
 function copyTemplates() {
   const templatesDir = 'dist/templates'
@@ -10,7 +13,7 @@ function copyTemplates() {
 
   try {
     const angularDir = path.dirname(
-      require.resolve('conventional-changelog-angular')
+      commitlintRequire.resolve('conventional-changelog-angular')
     )
     const templateSrc = path.join(angularDir, 'templates')
     if (fs.existsSync(templateSrc)) {
@@ -30,7 +33,7 @@ function copyTemplates() {
 
 function copySchema() {
   try {
-    const schemaFile = require.resolve(
+    const schemaFile = commitlintRequire.resolve(
       '@commitlint/config-validator/lib/commitlint.schema.json'
     )
     fs.copyFileSync(schemaFile, path.join('dist', 'commitlint.schema.json'))
