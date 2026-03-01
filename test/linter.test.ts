@@ -1,21 +1,20 @@
+import {test, expect} from 'vitest'
+import path from 'path'
 import {lintPullRequest} from '../src/linter'
 
-test('should lint the title correctly', async () => {
-  // Given
-  const title = 'feat(valid): scope'
+const scopeCaseConfig = path.resolve(
+  __dirname,
+  'e2e/fixtures/configs/scope-case.js'
+)
 
-  // Expect
+test('should lint the title correctly', async () => {
   await expect(
-    lintPullRequest(title, './commitlint.config.js')
+    lintPullRequest('feat(valid): scope', scopeCaseConfig)
   ).resolves.toBeUndefined()
 })
 
 test('should raise errors', async () => {
-  // Given
-  const title = 'feat(INVALID): scope'
-
-  // Expect
   await expect(
-    lintPullRequest(title, './commitlint.config.js')
+    lintPullRequest('feat(INVALID): scope', scopeCaseConfig)
   ).rejects.toThrow()
 })

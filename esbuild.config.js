@@ -1,7 +1,46 @@
 const {build: esbuild} = require('esbuild')
-const {execSync} = require('child_process')
+const {createRequire} = require('module')
 const fs = require('fs')
 const path = require('path')
+
+const commitlintRequire = createRequire(require.resolve('@commitlint/load'))
+
+function copyTemplates() {
+  const templatesDir = 'dist/templates'
+  if (!fs.existsSync(templatesDir)) {
+    fs.mkdirSync(templatesDir, {recursive: true})
+  }
+
+  try {
+    const angularDir = path.dirname(
+      commitlintRequire.resolve('conventional-changelog-angular')
+    )
+    const templateSrc = path.join(angularDir, 'templates')
+    if (fs.existsSync(templateSrc)) {
+      for (const file of fs.readdirSync(templateSrc)) {
+        if (file.endsWith('.hbs')) {
+          fs.copyFileSync(
+            path.join(templateSrc, file),
+            path.join(templatesDir, file)
+          )
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Warning: Could not copy template files:', e.message)
+  }
+}
+
+function copySchema() {
+  try {
+    const schemaFile = commitlintRequire.resolve(
+      '@commitlint/config-validator/lib/commitlint.schema.json'
+    )
+    fs.copyFileSync(schemaFile, path.join('dist', 'commitlint.schema.json'))
+  } catch (e) {
+    console.warn('Warning: Could not copy schema file:', e.message)
+  }
+}
 
 const config = {
   entryPoints: ['lib/main.js'],
@@ -23,25 +62,6 @@ const config = {
       name: 'import-meta-url',
       setup(build) {
         build.onLoad({filter: /\.js$/}, async args => {
-          const templatesDir = 'dist/templates'
-
-          if (!fs.existsSync(templatesDir)) {
-            fs.mkdirSync(templatesDir, {recursive: true})
-          }
-
-          // Copy specific template files
-          const templateSrc =
-            'node_modules/conventional-changelog-angular/templates'
-          if (fs.existsSync(templateSrc)) {
-            try {
-              execSync(`cp ${templateSrc}/*.hbs ${templatesDir}/`, {
-                stdio: 'ignore'
-              })
-            } catch (e) {
-              console.warn('Warning: Could not copy template files:', e.message)
-            }
-          }
-
           const contents = await fs.promises.readFile(args.path, 'utf8')
           const transformedContents = contents.replace(
             /import\.meta\.url/g,
@@ -55,18 +75,11 @@ const config = {
       }
     },
     {
-      name: 'copy-step',
+      name: 'copy-assets',
       setup(build) {
         build.onEnd(() => {
-          const schemaFile =
-            'node_modules/@commitlint/config-validator/lib/commitlint.schema.json'
-          if (fs.existsSync(schemaFile)) {
-            try {
-              execSync(`cp ${schemaFile} dist/`, {stdio: 'ignore'})
-            } catch (e) {
-              console.warn('Warning: Could not copy schema file:', e.message)
-            }
-          }
+          copyTemplates()
+          copySchema()
         })
       }
     }
