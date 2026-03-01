@@ -5,7 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  import-fresh: JulienKode/import-fresh#fix/issue-when-there-no-parent-module
   '@commitlint/types': 20.0.0
 
 importers:
@@ -24,6 +23,9 @@ importers:
       '@commitlint/load':
         specifier: 20.1.0
         version: 20.1.0(@types/node@20.11.0)(typescript@4.9.5)
+      '@commitlint/types':
+        specifier: 20.0.0
+        version: 20.0.0
     devDependencies:
       '@types/conventional-commits-parser':
         specifier: 5.0.1
@@ -1914,9 +1916,12 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  import-fresh@https://codeload.github.com/JulienKode/import-fresh/tar.gz/6d35fa7a52b427c8e65352641cba0443ae1d79cf:
-    resolution: {tarball: https://codeload.github.com/JulienKode/import-fresh/tar.gz/6d35fa7a52b427c8e65352641cba0443ae1d79cf}
-    version: 3.2.1
+  import-fresh@3.2.1:
+    resolution: {integrity: sha512-6e1q1cnWP2RXD9/keSkxHScg508CdXqXWgWBaETNhyuBFz+kUZlKboh+ISK+bU++DmbHimVBrOz/zzPe0sZ3sQ==}
+    engines: {node: '>=6'}
+
+  import-fresh@3.3.1:
+    resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
 
   import-from@3.0.0:
@@ -3409,7 +3414,7 @@ snapshots:
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.2
-      import-fresh: https://codeload.github.com/JulienKode/import-fresh/tar.gz/6d35fa7a52b427c8e65352641cba0443ae1d79cf
+      import-fresh: 3.2.1
       js-yaml: 4.1.0
       minimatch: 3.1.5
       strip-json-comments: 3.1.1
@@ -4264,7 +4269,7 @@ snapshots:
   cosmiconfig@7.0.0:
     dependencies:
       '@types/parse-json': 4.0.2
-      import-fresh: https://codeload.github.com/JulienKode/import-fresh/tar.gz/6d35fa7a52b427c8e65352641cba0443ae1d79cf
+      import-fresh: 3.2.1
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
@@ -4272,7 +4277,7 @@ snapshots:
   cosmiconfig@9.0.0(typescript@4.9.5):
     dependencies:
       env-paths: 2.2.1
-      import-fresh: https://codeload.github.com/JulienKode/import-fresh/tar.gz/6d35fa7a52b427c8e65352641cba0443ae1d79cf
+      import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
@@ -5061,7 +5066,12 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  import-fresh@https://codeload.github.com/JulienKode/import-fresh/tar.gz/6d35fa7a52b427c8e65352641cba0443ae1d79cf:
+  import-fresh@3.2.1:
+    dependencies:
+      parent-module: 1.0.1
+      resolve-from: 4.0.0
+
+  import-fresh@3.3.1:
     dependencies:
       parent-module: 1.0.1
       resolve-from: 4.0.0

@@ -1,13 +1,10 @@
+import {LintOptions, ParserPreset, QualifiedConfig} from '@commitlint/types'
+import type {Options as ParserOptions} from 'conventional-commits-parser'
 import load from '@commitlint/load'
 import lint from '@commitlint/lint'
 
-type Configuration = Awaited<ReturnType<typeof load>>
-type LintOpts = NonNullable<Parameters<typeof lint>[2]>
-
-function selectParserOpts(
-  parserPreset: Configuration['parserPreset']
-): object | null {
-  if (typeof parserPreset !== 'object' || !parserPreset) {
+function selectParserOpts(parserPreset: ParserPreset): object | null {
+  if (typeof parserPreset !== 'object') {
     return null
   }
 
@@ -18,8 +15,8 @@ function selectParserOpts(
   return parserPreset.parserOpts
 }
 
-function getLintOptions(configuration: Configuration): LintOpts {
-  const opts: LintOpts = {
+function getLintOptions(configuration: QualifiedConfig): LintOptions {
+  const opts: LintOptions & {parserOpts: ParserOptions} = {
     parserOpts: {},
     plugins: {},
     ignores: [],
