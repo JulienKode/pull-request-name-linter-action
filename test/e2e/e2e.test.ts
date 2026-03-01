@@ -9,7 +9,7 @@ describe('E2E: dist/index.js', () => {
   beforeAll(() => {
     if (!fs.existsSync(DIST_INDEX)) {
       throw new Error(
-        'dist/index.js does not exist. Run "yarn build:pack" before running e2e tests.'
+        'dist/index.js does not exist. Run "pnpm build:pack" before running e2e tests.'
       )
     }
   })
@@ -21,7 +21,7 @@ describe('E2E: dist/index.js', () => {
         configPath: configFixture('scope-case.js')
       })
 
-      expect(result.exitCode).toBe(0)
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(0)
       expect(result.stdout).not.toContain('::error::')
     })
 
@@ -31,7 +31,7 @@ describe('E2E: dist/index.js', () => {
         configPath: configFixture('type-enum.js')
       })
 
-      expect(result.exitCode).toBe(0)
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(0)
       expect(result.stdout).not.toContain('::error::')
     })
   })
@@ -43,8 +43,8 @@ describe('E2E: dist/index.js', () => {
         configPath: configFixture('scope-case.js')
       })
 
-      expect(result.exitCode).toBe(1)
-      expect(result.stdout).toContain('::error::')
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(1)
+      expect(result.stdout, `stderr: ${result.stderr}`).toContain('::error::')
       expect(result.stdout).toContain('scope-case')
     })
 
@@ -54,8 +54,8 @@ describe('E2E: dist/index.js', () => {
         configPath: configFixture('type-enum.js')
       })
 
-      expect(result.exitCode).toBe(1)
-      expect(result.stdout).toContain('::error::')
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(1)
+      expect(result.stdout, `stderr: ${result.stderr}`).toContain('::error::')
       expect(result.stdout).toContain('type-enum')
     })
   })
@@ -67,7 +67,7 @@ describe('E2E: dist/index.js', () => {
         configPath: configFixture('scope-case.js')
       })
 
-      expect(result.exitCode).toBe(0)
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(0)
       expect(result.stdout).not.toContain('::error::')
     })
   })
@@ -78,7 +78,7 @@ describe('E2E: dist/index.js', () => {
         eventPayloadPath: eventFixture('valid-pr.json')
       })
 
-      expect(result.exitCode).toBe(0)
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(0)
       expect(result.stdout).not.toContain('::error::')
     })
 
@@ -87,8 +87,8 @@ describe('E2E: dist/index.js', () => {
         eventPayloadPath: eventFixture('invalid-pr-uppercase-scope.json')
       })
 
-      expect(result.exitCode).toBe(1)
-      expect(result.stdout).toContain('::error::')
+      expect(result.exitCode, `stderr: ${result.stderr}`).toBe(1)
+      expect(result.stdout, `stderr: ${result.stderr}`).toContain('::error::')
     })
   })
 
@@ -103,7 +103,7 @@ describe('E2E: dist/index.js', () => {
         .split('\n')
         .filter(line => line.startsWith('::error::'))
 
-      expect(errorLines.length).toBeGreaterThan(0)
+      expect(errorLines.length, `stderr: ${result.stderr}\nstdout: ${result.stdout}`).toBeGreaterThan(0)
     })
   })
 })
