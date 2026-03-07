@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2022",                        /* Specify ECMAScript target version. */
-    "module": "preserve",                      /* Specify module code generation. */
-    "moduleResolution": "bundler",            /* Specify module resolution strategy. */
-    "outDir": "./lib",                        /* Redirect output structure to the directory. */
-    "rootDir": "./src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-    "strict": true,                           /* Enable all strict type-checking options. */
-    "noImplicitAny": false,                    /* Raise error on expressions and declarations with an implied 'any' type. */
-    "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
-    "skipLibCheck": true                      /* Skip type checking of declaration files in node_modules. */
+    "target": "ES2022",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
   },
   "exclude": ["node_modules", "**/*.test.ts", "test", "vitest.config.ts", "vitest.e2e.config.ts"]
 }
