@@ -36,6 +36,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^5.62.0
         version: 5.62.0(eslint@8.56.0)(supports-color@7.2.0)(typescript@5.9.3)
+      conventional-commits-parser:
+        specifier: ^6.3.0
+        version: 6.3.0
       esbuild:
         specifier: ^0.25.8
         version: 0.25.12
