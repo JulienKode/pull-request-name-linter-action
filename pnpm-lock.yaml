@@ -31,16 +31,16 @@ importers:
         specifier: 22.15.0
         version: 22.15.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^5.62.0
+        specifier: 5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.56.0)(typescript@5.9.3))(eslint@8.56.0)(supports-color@7.2.0)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ^5.62.0
+        specifier: 5.62.0
         version: 5.62.0(eslint@8.56.0)(supports-color@7.2.0)(typescript@5.9.3)
       conventional-commits-parser:
-        specifier: ^6.3.0
+        specifier: 6.3.0
         version: 6.3.0
       esbuild:
-        specifier: ^0.25.8
+        specifier: 0.25.12
         version: 0.25.12
       eslint:
         specifier: 8.56.0
@@ -4198,7 +4198,7 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.2.0
+      tslib: 2.8.1
 
   caniuse-lite@1.0.30001775: {}
 
@@ -5330,7 +5330,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.2.0
+      tslib: 2.8.1
 
   lru-cache@10.4.3: {}
 
@@ -5388,7 +5388,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.2.0
+      tslib: 2.8.1
 
   node-exports-info@1.6.0:
     dependencies:
@@ -5514,7 +5514,7 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.2.0
+      tslib: 2.8.1
 
   path-exists@4.0.0: {}
 
