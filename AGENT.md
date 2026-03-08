@@ -89,5 +89,4 @@ module.exports = {
 
 - `@commitlint/load`: Loads commitlint configurations with plugin support
 - `@commitlint/lint`: Validates commit messages against rules
-- Custom pnpm override for `import-fresh` to handle missing parent module issue
-- `@commitlint/types` pinned to `20.0.0` via pnpm override to prevent version drift with `conventional-commits-parser` types
+- `@commitlint/types` pinned to `20.4.3` via pnpm override to prevent version drift with `conventional-commits-parser` types
