@@ -28,7 +28,8 @@ function getPrTitle(): string | undefined {
     return undefined
   }
 
-  return pullRequest.title
+  const title: unknown = pullRequest.title
+  return typeof title === 'string' ? title : undefined
 }
 
-run()
+void run()
