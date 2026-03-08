@@ -34,11 +34,11 @@
     "eslint": "9.39.4",
     "eslint-plugin-github": "6.0.0",
     "eslint-plugin-prettier": "5.5.5",
-    "globals": "^17.4.0",
+    "globals": "17.4.0",
     "js-yaml": "4.1.0",
     "prettier": "3.8.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.56.1",
+    "typescript-eslint": "8.56.1",
     "vitest": "4.0.18"
   },
   "dependencies": {
