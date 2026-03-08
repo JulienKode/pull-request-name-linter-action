@@ -28,7 +28,7 @@ function getPrTitle(): string | undefined {
     return undefined
   }
 
-  return pullRequest.title
+  return pullRequest.title as string | undefined
 }
 
-run()
+void run()
