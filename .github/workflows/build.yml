@@ -2,6 +2,9 @@ name: "build"
 on:
   push:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build: # make sure build/ci work properly
     permissions:
@@ -12,7 +15,7 @@ jobs:
     - uses: pnpm/action-setup@v4
     - uses: actions/setup-node@v6
       with:
-        node-version: 20
+        node-version: 24
         cache: 'pnpm'
     - run: |
         pnpm install
