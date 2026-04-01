@@ -31,8 +31,8 @@ importers:
         specifier: 22.15.0
         version: 22.15.0
       conventional-commits-parser:
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.4.0
+        version: 6.4.0
       esbuild:
         specifier: 0.25.12
         version: 0.25.12
@@ -956,8 +956,8 @@ packages:
     resolution: {integrity: sha512-DOuBwYSqWzfwuRByY9O4oOIvDlkUCTDzfbOgcSbkY+imXXj+4tmrEFao3K+FxemClYfYnZzsvudbwrhje9VHDA==}
     engines: {node: '>=18'}
 
-  conventional-commits-parser@6.3.0:
-    resolution: {integrity: sha512-RfOq/Cqy9xV9bOA8N+ZH6DlrDR+5S3Mi0B5kACEjESpE+AviIpAptx9a9cFpWCCvgRtWT+0BbUw+e1BZfts9jg==}
+  conventional-commits-parser@6.4.0:
+    resolution: {integrity: sha512-tvRg7FIBNlyPzjdG8wWRlPHQJJHI7DylhtRGeU9Lq+JuoPh5BKpPRX83ZdLrvXuOSu5Eo/e7SzOQhU4Hd2Miuw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2158,7 +2158,7 @@ snapshots:
     dependencies:
       '@commitlint/types': 20.4.3
       conventional-changelog-angular: 8.3.0
-      conventional-commits-parser: 6.3.0
+      conventional-commits-parser: 6.4.0
 
   '@commitlint/resolve-extends@20.4.3':
     dependencies:
@@ -2180,7 +2180,7 @@ snapshots:
 
   '@commitlint/types@20.4.3':
     dependencies:
-      conventional-commits-parser: 6.3.0
+      conventional-commits-parser: 6.4.0
       picocolors: 1.1.1
 
   '@esbuild/aix-ppc64@0.25.12':
@@ -2852,7 +2852,7 @@ snapshots:
     dependencies:
       compare-func: 2.0.0
 
-  conventional-commits-parser@6.3.0:
+  conventional-commits-parser@6.4.0:
     dependencies:
       '@simple-libs/stream-utils': 1.2.0
       meow: 13.2.0
