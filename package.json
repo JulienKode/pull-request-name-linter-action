@@ -1,6 +1,6 @@
 {
   "name": "pull-request-commitlint-action",
-  "version": "20.1.0",
+  "version": "20.5.0",
   "private": true,
   "description": "Run commitlint on pull request name.",
   "packageManager": "pnpm@10.25.0",
