@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@commitlint/types': 20.5.0
+  '@commitlint/types': 21.0.1
 
 importers:
 
@@ -24,8 +24,8 @@ importers:
         specifier: 20.5.3
         version: 20.5.3(@types/node@25.5.2)(typescript@6.0.3)
       '@commitlint/types':
-        specifier: 20.5.0
-        version: 20.5.0
+        specifier: 21.0.1
+        version: 21.0.1
     devDependencies:
       '@types/node':
         specifier: 25.5.2
@@ -136,9 +136,9 @@ packages:
     resolution: {integrity: sha512-bd1BFII7p1EQZre9Kaj+kKaMFP3cFCdt21K7DItVux9XP5WjLgJ0/Uy1pJJh9aPwVJ6SKg62PxqlZaHI8hQAXw==}
     engines: {node: '>=22.12.0'}
 
-  '@commitlint/types@20.5.0':
-    resolution: {integrity: sha512-ZJoS8oSq2CAZEpc/YI9SulLrdiIyXeHb/OGqGrkUP6Q7YV+0ouNAa7GjqRdXeQPncHQIDz/jbCTlHScvYvO/gA==}
-    engines: {node: '>=v18'}
+  '@commitlint/types@21.0.1':
+    resolution: {integrity: sha512-4u7w8jcoCUFWhjWnASYzZHAP34OqOtuFBN87nQmFvqda03YU0T6z+yB4w0gSAMpekiRqqGk5rt+qSlW+a2vSEg==}
+    engines: {node: '>=22.12.0'}
 
   '@esbuild/aix-ppc64@0.27.7':
     resolution: {integrity: sha512-EKX3Qwmhz1eMdEJokhALr0YiD0lhQNwDqkPYyPhiSwKrh7/4KRjQc04sZ8db+5DVVnZ1LmbNDI1uAMPEUBnQPg==}
@@ -2189,19 +2189,19 @@ snapshots:
 
   '@commitlint/config-validator@20.5.0':
     dependencies:
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
       ajv: 8.20.0
 
   '@commitlint/ensure@21.0.1':
     dependencies:
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
       es-toolkit: 1.47.0
 
   '@commitlint/execute-rule@20.0.0': {}
 
   '@commitlint/is-ignored@21.0.2':
     dependencies:
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
       semver: 7.8.1
 
   '@commitlint/lint@21.0.2':
@@ -2209,14 +2209,14 @@ snapshots:
       '@commitlint/is-ignored': 21.0.2
       '@commitlint/parse': 21.0.2
       '@commitlint/rules': 21.0.2
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
 
   '@commitlint/load@20.5.3(@types/node@25.5.2)(typescript@6.0.3)':
     dependencies:
       '@commitlint/config-validator': 20.5.0
       '@commitlint/execute-rule': 20.0.0
       '@commitlint/resolve-extends': 20.5.3
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
       cosmiconfig: 9.0.1(typescript@6.0.3)
       cosmiconfig-typescript-loader: 6.3.0(@types/node@25.5.2)(cosmiconfig@9.0.1(typescript@6.0.3))(typescript@6.0.3)
       es-toolkit: 1.46.1
@@ -2230,14 +2230,14 @@ snapshots:
 
   '@commitlint/parse@21.0.2':
     dependencies:
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
       conventional-changelog-angular: 8.3.1
       conventional-commits-parser: 6.4.0
 
   '@commitlint/resolve-extends@20.5.3':
     dependencies:
       '@commitlint/config-validator': 20.5.0
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
       es-toolkit: 1.46.1
       global-directory: 5.0.0
       import-meta-resolve: 4.2.0
@@ -2248,11 +2248,11 @@ snapshots:
       '@commitlint/ensure': 21.0.1
       '@commitlint/message': 21.0.2
       '@commitlint/to-lines': 21.0.1
-      '@commitlint/types': 20.5.0
+      '@commitlint/types': 21.0.1
 
   '@commitlint/to-lines@21.0.1': {}
 
-  '@commitlint/types@20.5.0':
+  '@commitlint/types@21.0.1':
     dependencies:
       conventional-commits-parser: 6.4.0
       picocolors: 1.1.1
