@@ -30,7 +30,7 @@
   "devDependencies": {
     "@types/node": "25.5.2",
     "conventional-commits-parser": "6.4.0",
-    "esbuild": "0.28.0",
+    "esbuild": "0.28.1",
     "eslint": "9.39.4",
     "eslint-plugin-github": "6.0.0",
     "eslint-plugin-prettier": "5.5.6",
