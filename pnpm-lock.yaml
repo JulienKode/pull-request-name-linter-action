@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@commitlint/types': 21.0.1
+  '@commitlint/types': 21.2.0
 
 importers:
 
@@ -24,8 +24,8 @@ importers:
         specifier: 21.0.2
         version: 21.0.2(@types/node@26.1.1)(typescript@6.0.3)
       '@commitlint/types':
-        specifier: 21.0.1
-        version: 21.0.1
+        specifier: 21.2.0
+        version: 21.2.0
     devDependencies:
       '@types/node':
         specifier: 26.1.1
@@ -136,8 +136,8 @@ packages:
     resolution: {integrity: sha512-bd1BFII7p1EQZre9Kaj+kKaMFP3cFCdt21K7DItVux9XP5WjLgJ0/Uy1pJJh9aPwVJ6SKg62PxqlZaHI8hQAXw==}
     engines: {node: '>=22.12.0'}
 
-  '@commitlint/types@21.0.1':
-    resolution: {integrity: sha512-4u7w8jcoCUFWhjWnASYzZHAP34OqOtuFBN87nQmFvqda03YU0T6z+yB4w0gSAMpekiRqqGk5rt+qSlW+a2vSEg==}
+  '@commitlint/types@21.2.0':
+    resolution: {integrity: sha512-7zVFCDB2reMvJH5dmbKnOQPjZEvjdJTH8jc0U/PIPU1r3/+vf5pD1HlfitV2MWsWXrvu7u39iY1lyLUPOaN0Gw==}
     engines: {node: '>=22.12.0'}
 
   '@esbuild/aix-ppc64@0.27.7':
@@ -699,6 +699,10 @@ packages:
     resolution: {integrity: sha512-KxXvfapcixpz6rVEB6HPjOUZT22yN6v0vI0urQSk1L8MlEWPDFCZkhw2xmkyoTGYeFw7tWTZd7e3lVzRZRN/EA==}
     engines: {node: '>=18'}
 
+  '@simple-libs/stream-utils@2.0.0':
+    resolution: {integrity: sha512-fCTuZK4QBa+39Oz9l4OGfJfz+GpwCp3AqO7Zch3to99xHPgstVsRFpeQ8LNd2o1Gv8raL2mCFwiaHh7bFSp5DQ==}
+    engines: {node: '>=22'}
+
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
@@ -1021,6 +1025,11 @@ packages:
   conventional-commits-parser@6.4.0:
     resolution: {integrity: sha512-tvRg7FIBNlyPzjdG8wWRlPHQJJHI7DylhtRGeU9Lq+JuoPh5BKpPRX83ZdLrvXuOSu5Eo/e7SzOQhU4Hd2Miuw==}
     engines: {node: '>=18'}
+    hasBin: true
+
+  conventional-commits-parser@7.0.1:
+    resolution: {integrity: sha512-6VtskFpPsNkGVk/TY2RnV/MEdKfvCPBtQZN9x8jh9+k5RWBQ+tiaWn5UFCzTr0Dd88iKx7xghxbjBRp5uIzp3g==}
+    engines: {node: '>=22'}
     hasBin: true
 
   convert-source-map@2.0.0:
@@ -1672,6 +1681,10 @@ packages:
     resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}
     engines: {node: '>=18'}
 
+  meow@14.1.0:
+    resolution: {integrity: sha512-EDYo6VlmtnumlcBCbh1gLJ//9jvM/ndXHfVXIFrZVr6fGcwTUyCTFNTLCKuY3ffbK8L/+3Mzqnd58RojiZqHVw==}
+    engines: {node: '>=20'}
+
   minimatch@10.2.5:
     resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
     engines: {node: 18 || 20 || >=22}
@@ -2193,19 +2206,19 @@ snapshots:
 
   '@commitlint/config-validator@21.0.1':
     dependencies:
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
       ajv: 8.20.0
 
   '@commitlint/ensure@21.0.1':
     dependencies:
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
       es-toolkit: 1.47.0
 
   '@commitlint/execute-rule@21.0.1': {}
 
   '@commitlint/is-ignored@21.0.2':
     dependencies:
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
       semver: 7.8.1
 
   '@commitlint/lint@21.0.2':
@@ -2213,14 +2226,14 @@ snapshots:
       '@commitlint/is-ignored': 21.0.2
       '@commitlint/parse': 21.0.2
       '@commitlint/rules': 21.0.2
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
 
   '@commitlint/load@21.0.2(@types/node@26.1.1)(typescript@6.0.3)':
     dependencies:
       '@commitlint/config-validator': 21.0.1
       '@commitlint/execute-rule': 21.0.1
       '@commitlint/resolve-extends': 21.0.1
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
       cosmiconfig: 9.0.1(typescript@6.0.3)
       cosmiconfig-typescript-loader: 6.3.0(@types/node@26.1.1)(cosmiconfig@9.0.1(typescript@6.0.3))(typescript@6.0.3)
       es-toolkit: 1.47.0
@@ -2234,14 +2247,14 @@ snapshots:
 
   '@commitlint/parse@21.0.2':
     dependencies:
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
       conventional-changelog-angular: 8.3.1
       conventional-commits-parser: 6.4.0
 
   '@commitlint/resolve-extends@21.0.1':
     dependencies:
       '@commitlint/config-validator': 21.0.1
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
       es-toolkit: 1.47.0
       global-directory: 5.0.0
       resolve-from: 5.0.0
@@ -2251,13 +2264,13 @@ snapshots:
       '@commitlint/ensure': 21.0.1
       '@commitlint/message': 21.0.2
       '@commitlint/to-lines': 21.0.1
-      '@commitlint/types': 21.0.1
+      '@commitlint/types': 21.2.0
 
   '@commitlint/to-lines@21.0.1': {}
 
-  '@commitlint/types@21.0.1':
+  '@commitlint/types@21.2.0':
     dependencies:
-      conventional-commits-parser: 6.4.0
+      conventional-commits-parser: 7.0.1
       picocolors: 1.1.1
 
   '@esbuild/aix-ppc64@0.27.7':
@@ -2615,6 +2628,8 @@ snapshots:
   '@rtsao/scc@1.1.0': {}
 
   '@simple-libs/stream-utils@1.2.0': {}
+
+  '@simple-libs/stream-utils@2.0.0': {}
 
   '@standard-schema/spec@1.1.0': {}
 
@@ -3107,6 +3122,11 @@ snapshots:
     dependencies:
       '@simple-libs/stream-utils': 1.2.0
       meow: 13.2.0
+
+  conventional-commits-parser@7.0.1:
+    dependencies:
+      '@simple-libs/stream-utils': 2.0.0
+      meow: 14.1.0
 
   convert-source-map@2.0.0: {}
 
@@ -3887,6 +3907,8 @@ snapshots:
   math-intrinsics@1.1.0: {}
 
   meow@13.2.0: {}
+
+  meow@14.1.0: {}
 
   minimatch@10.2.5:
     dependencies:

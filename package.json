@@ -46,11 +46,11 @@
     "@actions/github": "9.0.0",
     "@commitlint/lint": "21.0.2",
     "@commitlint/load": "21.0.2",
-    "@commitlint/types": "21.0.1"
+    "@commitlint/types": "21.2.0"
   },
   "pnpm": {
     "overrides": {
-      "@commitlint/types": "21.0.1"
+      "@commitlint/types": "21.2.0"
     },
     "onlyBuiltDependencies": [
       "esbuild"
