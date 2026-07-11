@@ -43,7 +43,7 @@
   "dependencies": {
     "@actions/core": "3.0.1",
     "@actions/github": "9.0.0",
-    "@commitlint/lint": "21.0.2",
+    "@commitlint/lint": "21.2.0",
     "@commitlint/load": "21.0.2",
     "@commitlint/types": "21.2.0"
   },
