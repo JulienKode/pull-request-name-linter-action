@@ -29,7 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "26.1.1",
-    "conventional-commits-parser": "6.4.0",
+    "conventional-commits-parser": "7.1.0",
     "esbuild": "0.28.1",
     "eslint": "9.39.4",
     "eslint-plugin-github": "6.1.1",
