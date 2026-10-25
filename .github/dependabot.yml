@@ -1,7 +1,7 @@
 # To get started with Dependabot version updates, you'll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
 
 version: 2
 updates:
@@ -10,8 +10,36 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    # Minor and patch version updates only. Major version updates do not match
+    # these groups, so Dependabot opens an individual pull request for each one.
+    # applies-to keeps these rules on version updates; security updates stay
+    # individual as well. dependency-type is supported for npm.
+    groups:
+      development-dependencies:
+        applies-to: "version-updates"
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+      production-dependencies:
+        applies-to: "version-updates"
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
+    # dependency-type is not supported for github-actions, so dev and prod
+    # cannot be split. Minor and patch version updates for every action are
+    # one group. Major version updates and security updates stay individual.
+    groups:
+      actions:
+        applies-to: "version-updates"
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
